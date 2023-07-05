@@ -4,6 +4,7 @@ import up from "../../Images/arrowUp.png";
 import down from "../../Images/arrowDown.png";
 import Image from "next/image";
 import axios from "axios";
+import Cookies from "js-cookie";
 
 interface AnswerCardProps {
   id: number;
@@ -18,11 +19,20 @@ const AnswerCard: React.FC<AnswerCardProps> = ({ id, answer, initialLikes }) => 
   const likeAnswer = async () => {
     if (likeStatus === 0) {
       try {
-        await axios.put(`http://localhost:8081/like/${id}`);
+        await axios.put(`http://localhost:8081/like/${id}`, {}, {
+          headers: {
+            authorization: Cookies.get('Token'),
+          },
+        });
+        
         setLikes(likes + 1);
         setLikeStatus(1);
-      } catch (error) {
-        console.error(error);
+      } catch (error:any) {
+        if (error.response && error.response.status === 401) {
+          alert("Please log in."); // Display error message as a popup
+        } else {
+          console.error(error);
+        }
       }
     }
   };
@@ -30,11 +40,19 @@ const AnswerCard: React.FC<AnswerCardProps> = ({ id, answer, initialLikes }) => 
   const dislikeAnswer = async () => {
     if (likeStatus === 0 && likes > 0) {
       try {
-        await axios.put(`http://localhost:8081/dislike/${id}`);
+        await axios.put(`http://localhost:8081/dislike/${id}`, {}, {
+          headers: {
+            authorization: Cookies.get('Token'),
+          },
+        });
         setLikes(likes - 1);
         setLikeStatus(-1);
-      } catch (error) {
-        console.error(error);
+      } catch (error:any) {
+        if (error.response && error.response.status === 401) {
+          alert("Please log in."); // Display error message as a popup
+        } else {
+          console.error(error);
+        }
       }
     }
   };
