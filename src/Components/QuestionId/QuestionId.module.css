@@ -1,0 +1,57 @@
+.section1 {
+    display: flex;
+    margin-top: 120px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+.questionCard {
+    position: relative;
+    border-style: solid;
+    border-color: transparent;
+    border-left-color: #464498;
+    border-right-color: #464498;
+    width: 950px;
+    height: fit-content;
+    border-width: 5px;
+    color: white;
+  }
+  
+  .username {
+    width: 100%;
+    margin-left: 25px;
+  }
+  
+  .questionWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    height: 50px;
+    border-style: solid;
+    border-color: transparent;
+    border-bottom-color: #464498;
+    border-width: 5px;
+    align-items: center;
+    margin: 0px;
+  }
+
+  .question {
+    margin-left: 20px;
+    font-size: 32px;
+  }
+  
+  .description {
+    margin-top: 10px;
+    margin-left: 25px;
+    font-size: 20px;
+  }
+
+  .answerButton{
+    background-color: #464498;
+    margin-top: 20px;
+    border: none;
+    margin-left: 25px;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+  }
