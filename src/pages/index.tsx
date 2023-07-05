@@ -10,6 +10,7 @@ interface Question {
   id: string;
   question: string;
   description: string;
+  answers:Array<string>;
 }
 
 interface ApiResponse {
@@ -19,6 +20,7 @@ interface ApiResponse {
 export default function Home() {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [filter, setFilter] = useState<string>("");
+  const [answerNum, setAnswerNum] = useState<string>("");
 
   function scrollToSection(): void {
     const section: HTMLElement | null = document.getElementById('section');
@@ -29,6 +31,7 @@ export default function Home() {
 
   const fetchAllPosts = async () => {
     const response = await axios.get<ApiResponse>("http://localhost:8081/questions");
+    
     const { data } = response;
     console.log(data.questions);
     setQuestions(data.questions);
@@ -39,8 +42,11 @@ export default function Home() {
   }, []);
 
   const filteredPosts = questions.filter((question) =>
-    question.question.toLowerCase().includes(filter.toLowerCase())
-  );
+  question.question.toLowerCase().includes(filter.toLowerCase()) &&
+  (answerNum === "" || 
+    (answerNum === "Answered" && question.answers.length > 0) ||
+    (answerNum === "Not Answered" && question.answers.length === 0))
+);
 
   return (
     <>
@@ -65,6 +71,17 @@ export default function Home() {
               onChange={(event) => setFilter(event.target.value)}
               className={styles.searchInput}
             />
+          </div>
+          <div className={styles.selectWrapper}>
+            <select
+              id="platform"
+              onChange={(event) => setAnswerNum(event.target.value)}
+              className={styles.formSelect}
+            >
+              <option value="">All</option>
+              <option value="Answered">Answered</option>
+              <option value="Not Answered">Not Answered</option>
+            </select>
           </div>
         </div>
         <div className={styles.section3}>

@@ -59,6 +59,18 @@
   color: white;
 }
 
+.section2 select{
+  border: transparent;
+  background-color: #4457F5;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius:20px ;
+  width: 200px;
+  padding: 10px 0px 10px 10px;
+  color: white;
+}
+
+
 .searchWrapper{
   background-color: #454B72;
   width: 20%;
