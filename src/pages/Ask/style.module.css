@@ -1,0 +1,149 @@
+.container {
+    max-width: 1250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.section1{
+    margin-top: 120px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:transparent ;
+    border-color: #464498;
+    border-style: solid;
+    border-radius: 30px;
+    padding: 40px;
+}
+.section1 select{
+    width: 100%;
+    font-size: 20px;
+    box-sizing: border-box;
+    background-color:#454B72 ;
+    border: none;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 30px;
+    color: white;
+}
+
+.registerHeader{
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.input{
+    width: 100%;
+    font-size: 20px;
+    box-sizing: border-box;
+    background-color:#454B72 ;
+    border: none;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 30px;
+    color: white;
+}
+.passInfo{
+    color: white;
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+.button{
+    margin-top: 20px;
+    width: 100%;
+    font-size: 20px;
+    box-sizing: border-box;
+    background-color:#454B72 ;
+    border: none;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.inputFail{
+  color: red;
+}
+
+@media (max-width: 1250px) {
+    .container{
+      max-width: 1000px;
+    }
+  
+  }
+
+
+  @media (max-width: 1050px) {
+    .container{
+      max-width: 800px;
+    }
+    .section1{
+        width: 70%;
+    }
+  
+  }
+
+
+  @media (max-width: 850px) {
+    .container{
+      max-width: 700px;
+    }
+    .section1{
+        width: 80%;
+    }
+    
+
+  
+  }
+  
+
+  @media (max-width: 700px) {
+    .container{
+      max-width: 550px;
+    }
+  
+  
+  }
+
+
+  @media (max-width: 580px) {
+    .container{
+      max-width: 480px;
+    }
+    .section1{
+        width: 80%;
+        padding: 30px;
+    }
+    .registerHeader{
+        font-size: 35px;
+        color: white;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+  
+  }
+
+  @media (max-width: 480px) {
+    .container{
+      max-width: 400px;
+    }
+
+  
+
+  
+  }
+  
+
+  @media (max-width: 400px) {
+    .container{
+      max-width: 350px;
+    }
+  
+  
+  }

@@ -1,0 +1,35 @@
+.link{
+    text-decoration: none;
+    color: white;
+}
+
+.questionCard{
+    border-style: solid;
+    border-color: transparent;
+    border-left-color:#464498 ;
+    border-right-color: #464498;
+    width: 950px;
+    height: 200px;
+    border-width: 5px;
+    overflow: hidden;
+}
+
+.questionWrapper{
+    display: flex;
+    height: 50px;
+    border-style: solid;
+    border-color: transparent;
+    border-bottom-color: #464498;
+    border-width: 5px;
+    align-items: center;
+    margin: 0px;
+}
+
+.question{
+    margin-left: 20px;
+}
+
+.description{
+    margin-top: 10px;
+    margin-left: 25px;
+}

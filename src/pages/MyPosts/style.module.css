@@ -85,6 +85,20 @@
   justify-content: center;
 }
 
+.delete{
+  background-color: red;
+  padding: 5px 20px;
+  color: white;
+  font-weight: 700;
+  border-color: transparent;
+  margin-top: 10px;
+ border-radius: 20px;
+}
+.deleteText{
+  color: red;
+}
+
+
 
 
 @media (max-width: 1250px) {
@@ -247,6 +261,8 @@
   }
 
 }
+
+
 
 
 @media (max-width: 480px) {

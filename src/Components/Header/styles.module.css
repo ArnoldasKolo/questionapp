@@ -1,0 +1,203 @@
+.headerWrapper {
+    width: 100%;
+    display: flex;
+    background-color: transparent;
+    height: 86px;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+  }
+  
+  .logoNavWrapper {
+    display: flex;
+    align-items: center;
+  }
+  .logoNav {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+  }
+  
+  .logoNavLink {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .platformWrapper {
+    display: flex;
+    gap: 30px;
+  }
+  
+  .nav {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+  }
+  
+  .signUp {
+    background-color: #4457f5;
+    color: white;
+    border-color: transparent;
+    border-style: solid;
+    border-radius: 30px;
+    padding: 10px 40px;
+  }
+  
+  .logIn {
+    background-color: #454b72;
+    color: white;
+    border-color: transparent;
+    border-style: solid;
+    border-radius: 30px;
+    padding: 10px 40px;
+  }
+  
+  .navOptionLink {
+    text-decoration: none;
+  }
+  
+  .burgerButton {
+    background-color: transparent;
+    border: none;
+    display: none;
+  }
+  
+  .mobileMenu {
+    display: none;
+  }
+  
+  .mobileMenuWrapper {
+    display: none;
+  }
+  
+  @media (max-width: 1050px) {
+    .logoNav {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 800px) {
+    .nav {
+      display: none;
+    }
+  
+    .logoNav {
+      display: none;
+    }
+    .mobileMenuWrapper {
+      display: flex;
+      justify-content: right;
+    }
+    .mobileMenu {
+      position: absolute;
+      display: flex;
+      width: 40%;
+      height: 100%;
+      background-color: #151832;
+      border-style: solid;
+      border-top: transparent;
+      border-left-color: #4457f5;
+      border-right-color: transparent;
+      justify-content: right;
+    }
+  
+    .menuClosed {
+      right: 0px;
+      display: none;
+    }
+  
+    .mobnav {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-right: 20%;
+      margin-top: 30px;
+    }
+  
+    .navOptionLinkMob {
+      text-decoration: none;
+      color: black;
+    }
+  
+    .signUpMob {
+      background-color: #4457f5;
+      color: white;
+      border-color: transparent;
+      border-style: solid;
+      border-radius: 30px;
+      padding: 10px 40px;
+    }
+  
+    .logInMob {
+      background-color: #454b72;
+      color: white;
+      border-color: transparent;
+      border-style: solid;
+      border-radius: 30px;
+      padding: 10px 40px;
+    }
+  
+    .burgerButton {
+      display: flex;
+    }
+  }
+  
+  @media (max-width: 700px) {
+    .logInMob {
+      padding: 8px 30px;
+    }
+  
+    .signUpMob {
+      padding: 8px 30px;
+    }
+  
+    .mobileMenu {
+      width: 40%;
+      height: 100%;
+    }
+  }
+  @media (max-width: 560px) {
+    .logInMob {
+      padding: 8px 20px;
+      font-size: 15px;
+    }
+  
+    .signUpMob {
+      padding: 8px 20px;
+      font-size: 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .platformImage {
+      width: 40px;
+      height: 40px;
+    }
+    .mobnav {
+      padding: 0px;
+    }
+    .logInMob {
+      padding: 5px 15px;
+      font-size: 15px;
+    }
+  
+    .signUpMob {
+      padding: 5px 15px;
+      font-size: 15px;
+    }
+    .mobileMenu {
+      width: 45%;
+      height: 100%;
+    }
+  }
+  
+  @media (max-width: 350px) {
+    .mobnav {
+      margin-right: 10px;
+    }
+    .mobnavOption {
+      font-size: 15px;
+    }
+  }
+  

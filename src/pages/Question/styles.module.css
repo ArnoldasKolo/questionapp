@@ -1,0 +1,139 @@
+.container {
+  position: relative;
+}
+
+.section1 {
+  display: flex;
+  margin-top: 120px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.questionCard {
+  position: relative;
+  border-style: solid;
+  border-color: transparent;
+  border-left-color: #464498;
+  border-right-color: #464498;
+  width: 950px;
+  height: fit-content;
+  border-width: 5px;
+  color: white;
+}
+
+.username {
+  width: 100%;
+  margin-left: 25px;
+}
+
+.questionWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  height: 50px;
+  border-style: solid;
+  border-color: transparent;
+  border-bottom-color: #464498;
+  border-width: 5px;
+  align-items: center;
+  margin: 0px;
+}
+
+.line {
+  width: 100%;
+  height: 20px;
+  background-color: #464498;
+  margin-top: 50px;
+}
+
+.question {
+  margin-left: 20px;
+  font-size: 32px;
+}
+
+.description {
+  margin-top: 10px;
+  margin-left: 25px;
+  font-size: 20px;
+}
+
+.section2 {
+  margin-top: 55px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section2 h3 {
+  font-size: 40px;
+  font-weight: 700;
+  color: white;
+}
+
+.section3 {
+  margin-top: 50px;
+}
+
+.answersWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.insertWrapper {
+  position: absolute;
+  width: 70%;
+  background-color: #151832;
+  padding: 30px;
+  border-color: #464498;
+  border-style: solid;
+  border-radius: 20px;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.input {
+  width: 100%;
+  font-size: 20px;
+  box-sizing: border-box;
+  background-color: #454b72;
+  border: none;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 30px;
+  color: white;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.header h1{
+  color: white;
+}
+.crossButton{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.button{
+  margin-top: 20px;
+  width: 100%;
+  font-size: 20px;
+  box-sizing: border-box;
+  background-color:#454B72 ;
+  border: none;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 30px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.inputFail{
+  color: red;
+}
+

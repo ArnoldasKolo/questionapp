@@ -1,10 +1,12 @@
-import Header from "../Components/Header/Header";
-import styles from "@/styles/Home.module.css";
+import Header from "../../Components/Header/Header";
+import styles from "./style.module.css";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import search from "../Images/search.png";
-import QuestionCard from "../Components/Question/QuestionCard";
+import search from "../../Images/search.png";
+import QuestionCard from "../../Components/Question/QuestionCard";
+import Cookies from "js-cookie";
+import router, { useRouter } from "next/router";
 
 interface Question {
   id: string;
@@ -19,43 +21,59 @@ interface ApiResponse {
 export default function Home() {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [filter, setFilter] = useState<string>("");
+  const [success, setSuccess] = useState(false);
+  const router = useRouter();
 
-  function scrollToSection(): void {
-    const section: HTMLElement | null = document.getElementById('section');
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+
+  const fetchAllUsersPosts = async () => {
+    try {
+      const response = await axios.get(
+        "http://localhost:8081/AllUsersQuestions",
+        {
+          headers: {
+            authorization:  Cookies.get('Token'),
+          },
+        }
+      );
+
+      console.log(response)
+      const {data}= response
+      setQuestions(data.user[0].createdQuestions)
+    } catch (error) {
+      console.error("Error fetching user posts:", error);
     }
-  }
-
-  const fetchAllPosts = async () => {
-    const response = await axios.get<ApiResponse>("http://localhost:8081/questions");
-    const { data } = response;
-    console.log(data.questions);
-    setQuestions(data.questions);
   };
 
   useEffect(() => {
-    fetchAllPosts();
+    fetchAllUsersPosts();
   }, []);
 
   const filteredPosts = questions.filter((question) =>
     question.question.toLowerCase().includes(filter.toLowerCase())
   );
 
+  const deleteQuestion = async (postId: string) => {
+    const response = await axios.delete(
+      `http://localhost:8081/deleteQuestion/${postId}`
+    );
+    console.log(response)
+    if (response.status === 200) {
+      setSuccess(true);
+      setTimeout(() => {
+        // setSuccess(false);
+        router.push("/");
+      }, 1000);
+    }
+    
+  };
+
   return (
     <>
       <div className={styles.container}>
         <Header />
-        <div className={styles.section1}>
-          <div className={styles.heroText}>
-            <p>Discover Games and solutions in one place</p>
-            <h1>Find answers to your game problems</h1>
-            <button onClick={scrollToSection}>Start exploring</button>
-          </div>
-        </div>
-        <div className={styles.line}></div>
         <div className={styles.section2} id="section">
           <h3 className={styles.section2Header}>All Questions</h3>
+          
           <div className={styles.searchWrapper}>
             <Image className={styles.searchImage} src={search} alt="search" />
             <input
@@ -68,7 +86,11 @@ export default function Home() {
           </div>
         </div>
         <div className={styles.section3}>
+        {success && (
+                <div className={styles.deleteText}>Post was deleted</div>
+              )}
           <div className={styles.cardsWrapper}>
+          
             {filteredPosts.map((post) => (
               <div key={post.id}>
                 <QuestionCard
@@ -76,6 +98,8 @@ export default function Home() {
                   question={post.question}
                   description={post.description}
                 />
+                
+                <button onClick={() => deleteQuestion(post.id)} className={styles.delete}>DELETE</button>
               </div>
             ))}
           </div>
