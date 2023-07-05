@@ -69,7 +69,7 @@ const Question: React.FC = () => {
       );
       /* @ts-ignore */
       const data = response.data.posts[0].answers;
-      
+
       const sortedAnswers = data.sort((a: { likes: number }, b: { likes: number }) => b.likes - a.likes);
       setAnswers(sortedAnswers);
     } catch (error) {
@@ -121,9 +121,10 @@ const Question: React.FC = () => {
 
   return (
     <>
+      <div className={styles.container}>
       <Header />
       {question && user && answers && (
-        <div className={styles.container}>
+        <div className={styles.wrapper}>
           <div className={styles.section1}>
             <QuestionCard
               username={user.username}
@@ -176,6 +177,7 @@ const Question: React.FC = () => {
           )}
         </div>
       )}
+      </div>
     </>
   );
 };

@@ -75,6 +75,7 @@ export default function Home() {
               {answers.map((answer) => (
                 <div key={answer.id}>
                   <AnswerCard
+                  /* @ts-ignore */
                     id={answer.id}
                     answer={answer.answer}
                     initialLikes={answer.likes}

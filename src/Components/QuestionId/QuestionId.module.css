@@ -25,7 +25,7 @@
   .questionWrapper {
     display: flex;
     flex-wrap: wrap;
-    height: 50px;
+    height: fit-content;
     border-style: solid;
     border-color: transparent;
     border-bottom-color: #464498;
@@ -54,4 +54,68 @@
     color: white;
     border-radius: 20px;
     cursor: pointer;
+  }
+
+
+  @media (max-width: 1250px) {
+    .questionCard{
+        width: 950px;
+
+    }
+  
+  }
+
+
+  @media (max-width: 1050px) {
+   
+    .questionCard{
+        width: 700px;
+       
+    }
+
+
+    
+  }
+
+  @media (max-width: 850px) {
+   
+    .questionCard{
+        width: 650px;
+        
+    }
+
+  }
+
+  @media (max-width: 700px) {
+   
+    .questionCard{
+        width: 500px;
+    }
+  }
+
+  @media (max-width: 580px) {
+   
+    .questionCard{
+        width: 450px;
+    }
+
+  }
+
+  @media (max-width: 480px) {
+   
+    .questionCard{
+        width: 380px;
+
+    }
+
+
+  }
+
+
+  @media (max-width: 400px) {
+   
+    .questionCard{
+        width: 320px;
+    }
+
   }

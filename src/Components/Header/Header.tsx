@@ -76,7 +76,7 @@ const MobileNavLoggedIn: React.FC<MobileNavProps> = (props) => {
         className={`${props.active ? styles.mobileMenu : styles.menuClosed}`}
       >
         <ul className={styles.mobnav}>
-          <Link className={styles.navOptionLinkMob} href={"/Post"}>
+          <Link className={styles.navOptionLinkMob} href={"/Ask"}>
             <li className={styles.logInMob}>Ask</li>
           </Link>
           <Link className={styles.navOptionLink} href={"/MyPosts"}>

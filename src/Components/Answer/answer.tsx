@@ -58,7 +58,7 @@ const AnswerCard: React.FC<AnswerCardProps> = ({ id, answer, initialLikes }) => 
           <Image src={down} alt="down" />
         </button>
       </div>
-      <div className={styles.asnwerWrapper}>
+      <div className={styles.answerWrapper}>
         <p className={styles.answer}>{answer}</p>
       </div>
     </div>

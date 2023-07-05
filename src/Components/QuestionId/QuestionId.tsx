@@ -3,7 +3,19 @@ import Image from "next/image";
 import cross from "../../Images/cross 1.png";
 import styles from "./QuestionId.module.css";
 
-const QuestionCard = ({ username, question, description, handleAnswerClick }) => {
+interface QuestionCardProps {
+  username: string;
+  question: string;
+  description: string;
+  handleAnswerClick: () => void;
+}
+
+const QuestionCard: React.FC<QuestionCardProps> = ({
+  username,
+  question,
+  description,
+  handleAnswerClick,
+}) => {
   return (
     <div className={styles.questionCard}>
       <p className={styles.username}>User: {username}</p>

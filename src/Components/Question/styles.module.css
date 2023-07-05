@@ -12,6 +12,8 @@
     height: 200px;
     border-width: 5px;
     overflow: hidden;
+    margin-bottom: 30px;
+
 }
 
 .questionWrapper{
@@ -27,9 +29,87 @@
 
 .question{
     margin-left: 20px;
+    margin-right: 20px;
 }
 
 .description{
     margin-top: 10px;
     margin-left: 25px;
+    margin-right: 25px;
 }
+
+
+
+@media (max-width: 1250px) {
+    .questionCard{
+        width: 950px;
+
+    }
+  
+  }
+
+
+  @media (max-width: 1050px) {
+   
+    .questionCard{
+        width: 700px;
+       
+    }
+  }
+
+  @media (max-width: 850px) {
+   
+    .questionCard{
+        width: 650px;
+        height: 300px;
+        
+    }
+
+    .questionWrapper{
+
+        height: 70px;
+
+    }
+  }
+
+  @media (max-width: 700px) {
+   
+    .questionCard{
+        width: 500px;
+    }
+  }
+
+  @media (max-width: 580px) {
+   
+    .questionCard{
+        width: 450px;
+        height: 350px;
+    }
+    .questionWrapper{
+
+        height: 100px;
+
+    }
+  }
+
+  @media (max-width: 480px) {
+   
+    .questionCard{
+        width: 380px;
+        height: 400px;
+    }
+  }
+
+
+  @media (max-width: 400px) {
+   
+    .questionCard{
+        width: 320px;
+        height: 500px;
+    }
+    .questionWrapper{
+
+        height: 120px;
+
+    }
+  }
